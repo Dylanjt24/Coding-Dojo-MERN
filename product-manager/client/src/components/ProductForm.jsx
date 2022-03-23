@@ -31,29 +31,29 @@ const CreateForm = (props) => {
     }
 
     return (
-        <>
-            <h1>Product Manager</h1>
+        <div className="container">
+            <h1 className="text-center">Product Manager</h1>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="form-group">
                     <label>Title</label>
-                    <input type="text" name="title" value={title} onChange={e => setTitle(e.target.value)} />
+                    <input type="text" name="title" value={title} onChange={e => setTitle(e.target.value)} className="form-control" />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Price</label>
-                    <input type="number" name="price" value={price} onChange={e => setPrice(e.target.value)} />
+                    <input type="number" name="price" value={price} onChange={e => setPrice(e.target.value)} className="form-control"  />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Description</label>
-                    <textarea name="description" cols="30" rows="5" value={description} onChange={e => setDescription(e.target.value)}></textarea>
+                    <textarea name="description" cols="30" rows="5" value={description} onChange={e => setDescription(e.target.value)} className="form-control" ></textarea>
                 </div>
-                <button>Create</button>
+                <button className="btn btn-success mt-3">Create</button>
             </form>
             {
                 errors.map((err, i) => (
                     <p key={i} style={{ color: "red" }}>{err}</p>
                 ))
             }
-        </>
+        </div>
     )
 }
 

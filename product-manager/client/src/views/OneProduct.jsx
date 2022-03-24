@@ -3,7 +3,7 @@ import axios from "axios"
 import { useParams, Link, useNavigate } from "react-router-dom"
 
 const OneProduct = () => {
-  const {id} = useParams() // destructure the id from params
+  const {id} = useParams()
   const [product, setProduct] = useState()
   const navigate = useNavigate();
 

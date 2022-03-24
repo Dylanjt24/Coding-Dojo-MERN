@@ -12,7 +12,7 @@ const EditProduct = () => {
   const navigate = useNavigate();
   const [errors, setErrors] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     axios.get(`http://localhost:8000/api/products/${id}`)
       .then(res=>{
         const product = res.data;
@@ -24,19 +24,19 @@ const EditProduct = () => {
   },[])
 
 
-  const handleSubmit =(e)=>{
-    e.preventDefault()
+  const handleSubmit = (e) =>{
+    e.preventDefault();
     axios.put(`http://localhost:8000/api/products/${id}/edit`,{title, price, description})
       .then(res=>{
         navigate("/");
       })
       .catch(err=>{
-        const errorResponse = err.response.data.errors
-        const errorArr = []
+        const errorResponse = err.response.data.errors;
+        const errorArr = [];
         for( const key of Object.keys(errorResponse)){
-          errorArr.push(errorResponse[key]["message"]) 
+          errorArr.push(errorResponse[key]["message"]);
         }
-        setErrors(errorArr)
+        setErrors(errorArr);
       })
   }
 

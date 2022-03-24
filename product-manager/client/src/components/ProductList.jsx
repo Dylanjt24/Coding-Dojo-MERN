@@ -16,7 +16,7 @@ const ProductList = (props) => {
     return (
         <div className="container text-center">
             <h1>All Products:</h1>
-            <table className="table">
+            <table className="table table-striped">
                 <thead>
                     <tr>
                         <th>Title</th>

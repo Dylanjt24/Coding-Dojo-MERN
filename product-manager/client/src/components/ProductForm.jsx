@@ -1,33 +1,34 @@
-import React, { useState } from 'react'
-import axios from "axios"
+import React, { useState } from 'react';
+import axios from "axios";
 
 const CreateForm = (props) => {
-    const [title, setTitle] = useState("")
-    const [price, setPrice] = useState()
-    const [description, setDescription] = useState("")
-    const [errors, setErrors] = useState([])
+    const [title, setTitle] = useState("");
+    const [price, setPrice] = useState();
+    const [description, setDescription] = useState("");
+    const [errors, setErrors] = useState([]);
 
     const handleSubmit = (e) =>{
         e.preventDefault()
         axios.post(`http://localhost:8000/api/products/new`, {title, price, description})
             .then(res=>{
-                clearForm()
+                props.reload();
+                clearForm();
             })
             .catch(err=>{
-                const errorResponse = err.response.data.errors
-                const errorArr =[]
+                const errorResponse = err.response.data.errors;
+                const errorArr =[];
                 for(const key of Object.keys(errorResponse)){
-                    errorArr.push(errorResponse[key]["message"])
+                    errorArr.push(errorResponse[key]["message"]);
                 }
-                setErrors(errorArr)
+                setErrors(errorArr);
             })
 
     }
 
     const clearForm = () =>{
-        setTitle("")
-        setPrice()
-        setDescription("")
+        setTitle("");
+        setPrice();
+        setDescription("");
     }
 
     return (

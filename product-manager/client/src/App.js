@@ -1,12 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import ProductForm from './components/ProductForm'
+import Main from './views/Main';
+import OneProduct from './views/OneProduct';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ProductForm />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/:id" element={<OneProduct />} />
       </Routes>
     </BrowserRouter>
   );

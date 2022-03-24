@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 
-const CreateForm = (props) => {
+const ProductForm = (props) => {
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState();
     const [description, setDescription] = useState("");
@@ -58,4 +58,4 @@ const CreateForm = (props) => {
     )
 }
 
-export default CreateForm
+export default ProductForm

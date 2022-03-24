@@ -21,7 +21,7 @@ const Main = () => {
         <div>
             <ProductForm reload={reload} />
             <hr/>
-            {products && <ProductList products={products} />}
+            {products && <ProductList products={products} reload={reload} />}
         </div>
     )
 }

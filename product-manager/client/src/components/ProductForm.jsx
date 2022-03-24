@@ -27,7 +27,7 @@ const ProductForm = (props) => {
 
     const clearForm = () =>{
         setTitle("");
-        setPrice();
+        setPrice("");
         setDescription("");
     }
 

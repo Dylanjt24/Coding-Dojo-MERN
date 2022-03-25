@@ -7,7 +7,7 @@ import EditAuthor from './views/EditAuthor';
 function App() {
   return (
     <BrowserRouter>
-      <h1>Favorite Authors</h1>
+      <h1 className="text-center">Favorite Authors</h1>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/new" element={<CreateAuthor />} />

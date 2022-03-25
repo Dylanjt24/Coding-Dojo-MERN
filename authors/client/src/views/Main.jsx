@@ -12,15 +12,19 @@ const Main = () => {
             .catch(err => console.log(err));
     }, [refresh])
 
-    const reload = ()=>{
-        setRefresh(!refresh);
+    const handleDelete = (deleteId)=>{
+        axios.delete(`http://localhost:8000/api/authors/${deleteId}/delete`)
+            .then(res=>{
+                setAuthors(authors.filter(author => author._id != deleteId));
+            })
+            .catch(err => console.log(err))
     }
 
     return (
-        <div>
+        <div className="text-center">
             <Link to="/new">Add an author</Link>
             <p>We have quotes by:</p>
-            <table>
+            <table className="table table-striped">
                 <thead>
                     <tr>
                         <th>Author</th>
@@ -35,6 +39,7 @@ const Main = () => {
                                     <td>{author.name}</td>
                                     <td>
                                         <Link to={`/${author._id}/edit`}  className="btn btn-primary">Edit</Link>
+                                        <button onClick={()=>handleDelete(author._id)} className="btn btn-danger ms-3">Delete</button>
                                     </td>
                                 </tr>
                             ))

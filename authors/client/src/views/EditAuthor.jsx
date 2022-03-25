@@ -35,7 +35,7 @@ const AuthorForm = (props) => {
     }
 
     return (
-        <div className="container">
+        <div className="container text-center">
             <Link to="/">Home</Link>
             <p>Edit this author:</p>
             {
@@ -45,7 +45,7 @@ const AuthorForm = (props) => {
                         <label>Name:</label>
                         <input type="text" name="name" value={name} onChange={e => setName(e.target.value)} className="form-control" />
                     </div>
-                    <button type="button" onClick={() => navigate("/")}>Cancel</button>
+                    <button type="button" className="btn btn-primary mt-3 me-3" onClick={() => navigate("/")}>Cancel</button>
                     <button className="btn btn-success mt-3">Create</button>
                 </form> :
                 <div>

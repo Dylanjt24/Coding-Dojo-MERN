@@ -39,6 +39,11 @@ const AuthorForm = (props) => {
             <Link to="/">Home</Link>
             <p>Edit this author:</p>
             {
+                errors.map((err, i) => (
+                    <p key={i} style={{ color: "red" }}>{err}</p>
+                ))
+            }
+            {
                 name !== undefined ?
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
@@ -52,11 +57,6 @@ const AuthorForm = (props) => {
                     <p>We're sorry, but we could not find the author you are looking for.</p>
                     <p>Would you like to <Link to="/new">add this author to our database?</Link></p>
                 </div>
-            }
-            {
-                errors.map((err, i) => (
-                    <p key={i} style={{ color: "red" }}>{err}</p>
-                ))
             }
         </div>
     )

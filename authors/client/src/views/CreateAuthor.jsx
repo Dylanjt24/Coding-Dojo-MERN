@@ -28,6 +28,11 @@ const AuthorForm = (props) => {
         <div className="container text-center">
             <Link to="/">Home</Link>
             <p>Add a new author:</p>
+            {
+                errors.map((err, i) => (
+                    <p key={i} style={{ color: "red" }}>{err}</p>
+                ))
+            }
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Name:</label>
@@ -36,11 +41,6 @@ const AuthorForm = (props) => {
                 <button type="button" className="btn btn-primary mt-3 me-3" onClick={() => navigate("/")}>Cancel</button>
                 <button className="btn btn-success mt-3">Create</button>
             </form>
-            {
-                errors.map((err, i) => (
-                    <p key={i} style={{ color: "red" }}>{err}</p>
-                ))
-            }
         </div>
     )
 }

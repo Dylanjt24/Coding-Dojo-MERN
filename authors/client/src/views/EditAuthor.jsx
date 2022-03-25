@@ -46,7 +46,7 @@ const AuthorForm = (props) => {
                         <input type="text" name="name" value={name} onChange={e => setName(e.target.value)} className="form-control" />
                     </div>
                     <button type="button" className="btn btn-primary mt-3 me-3" onClick={() => navigate("/")}>Cancel</button>
-                    <button className="btn btn-success mt-3">Create</button>
+                    <button className="btn btn-success mt-3">Submit</button>
                 </form> :
                 <div>
                     <p>We're sorry, but we could not find the author you are looking for.</p>

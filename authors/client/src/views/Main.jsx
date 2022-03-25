@@ -24,7 +24,7 @@ const Main = () => {
         <div className="text-center">
             <Link to="/new">Add an author</Link>
             <p>We have quotes by:</p>
-            <table className="table table-striped">
+            <table className="table table-striped table-bordered" style={{width: "50rem", margin: "auto"}}>
                 <thead>
                     <tr>
                         <th>Author</th>

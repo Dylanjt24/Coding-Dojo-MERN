@@ -4,7 +4,7 @@ import { useNavigate, Link, useParams } from 'react-router-dom';
 
 const AuthorForm = (props) => {
     const { id } = useParams();
-    const [name, setName] = useState("");
+    const [name, setName] = useState(undefined);
 
     const [errors, setErrors] = useState([]);
     const navigate = useNavigate();
@@ -39,7 +39,7 @@ const AuthorForm = (props) => {
             <Link to="/">Home</Link>
             <p>Edit this author:</p>
             {
-                name ?
+                name !== undefined ?
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label>Name:</label>

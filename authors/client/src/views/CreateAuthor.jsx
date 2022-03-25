@@ -33,8 +33,8 @@ const AuthorForm = (props) => {
                     <label>Name:</label>
                     <input type="text" name="name" value={name} onChange={e => setName(e.target.value)} className="form-control" />
                 </div>
-                <button className="btn btn-success mt-3">Create</button>
                 <button type="button" onClick={() => navigate("/")}>Cancel</button>
+                <button className="btn btn-success mt-3">Create</button>
             </form>
             {
                 errors.map((err, i) => (

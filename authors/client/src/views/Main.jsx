@@ -31,9 +31,11 @@ const Main = () => {
                     {
                         authors &&
                             authors.map((author, i) => (
-                                <tr>
+                                <tr key={i}>
                                     <td>{author.name}</td>
-                                    <td>TBD</td>
+                                    <td>
+                                        <Link to={`/${author._id}/edit`}  className="btn btn-primary">Edit</Link>
+                                    </td>
                                 </tr>
                             ))
                     }
